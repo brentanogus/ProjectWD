@@ -2,9 +2,7 @@
 <html lan="en">
     <head>
         <link rel="stylesheet" type="text/css" href="styles.css" >
-        <script>
-            
-        </script>
+        <script src="script.js"></script>
 
         <!-- Google fonts -->
 
@@ -21,27 +19,40 @@
     </head>
     
     <header>
-        <H1>WEB DESIGN PROJECT</H1>
+        <!-- Header of the webpage -->
+
+        <!-- Title header and logo -->
+        <div>
+            <div id="logo_1">
+                <a href="index.html"><img src="logo.png" alt="image" class="logo" width="15%" height="15%"></a>
+            </div>
+            <h1 class="site_title">NCI Car<br></h1>
+            <h3 class="site_title" id="subtitle">Find your car. Find your road.</h3>
+        </div>        
     </header>
     
     <body>
-         <!-- The Navbar -->
-         <div class="top"><a href="index.html">Home</a></div>
-         <div class="top"><a href="gallery.html">Available Cars</a></div>
-         <div class="top"><a href="form.html">Buy</a></div></div>
+         <!-- The Side Navbar -->
+         <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Available Cars</a>
+            <a href="form.html">Buy!</a>
+            <a href="#">Contact</a>
+          </div>  
+        
+          <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; MENU</span>
 
-        <div>Project's Body Gallery Page</div>
-
-        <br>
-        <!-- The PETs images -->
+        <!-- The Cars images -->
         <div id="overlay" class="car"><a href="form.html"><img src="cat.jpg" class="image2" alt="image2" ></a>
             <br><caption><h1>Garfield</h1>Male, 1 year old</caption>
         </div>
 
     </body>
 
-    <footer>
-        @brentanogus & @rafaelfortunato
+    <footer class="centered">
+        <br><br><br>
+        <b>All rights reserved &copy;brentanogus and &copy;rfortunato</b>
     </footer>
     
 </html>
