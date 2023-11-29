@@ -1,23 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&family=Playpen+Sans&family=Tilt+Neon&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&family=Playpen+Sans:wght@300;400&family=Tilt+Neon&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Borel&family=Pixelify+Sans&family=Playpen+Sans:wght@300;400&family=Tilt+Neon&display=swap');
 
 body{
-    background-image: url(../images/background2.jpeg);
+    /*background-image: url(../images/background2.jpeg);*/
+    background-color:  #1e0000;
     background-size: 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center center;
-    margin-left: 7%;
-    margin-right: 7%;
-}
-
-.site_body{
     
 }
 
 header{
+    background-image: url(../images/background2.jpeg);
+    background-position: auto;
     text-align: center;
     padding-bottom: 5%;
     border-bottom: double darkred;
+    background-size: cover;
+    background-position: center;
+	display: flex;
+	flex-direction: column;
+	position: relative;
 }
 
 .logo{
@@ -63,19 +68,16 @@ table, th, td{
     text-align: left;
 }
 
-#table{
-    border: 3px solid rgb(143, 1, 67);
-    background-image: url("pets_img.jpg");
-    padding: 8px;
-    color: rgb(0, 100, 70);
-    font-size: 20px;
-}
 
 form{    
     margin: 0 auto;
     width: 400px;
     text-align: center;
   }
+
+#services{
+    color: white;
+}
 
 .image{
     object-fit:cover;
@@ -92,7 +94,15 @@ form{
 }
 
 footer{
-    border-top: 3px double darkred;
+    background-image: url(../images/background2.jpeg);
+    border-top: 3px double #1e0000;
+    font-family: 'Pixelify Sans', sans-serif;
+    color: #1e0000;
+    background-size: cover;
+    background-position: center;
+	display: flex;
+	flex-direction: column;
+	position: relative;
 }
 
 .car{
@@ -103,20 +113,20 @@ footer{
     color: white;
 }
 
-#paw2{
-    width: 800px;
-    align-self: center;
-}
+
 
 /* Google Font */
 h1, h2{
     font-family: 'Borel', cursive;
+    color: silver;
+}
+
+h4{
+    font-family: 'Pixelify Sans', sans-serif;
     color: white;
 }
 
-h3, h4, h5, p, body{
-    font-family: 'Open Sans', sans-serif;
-    font-family: 'Playpen Sans', cursive;
+h3, h5, p, body{
     font-family: 'Tilt Neon', sans-serif;
     color: white;
 }
@@ -137,13 +147,14 @@ input {
 
 /* SideNav bar config*/
   .sidenav {
+    color: #A8A8A8;
     height: 100%;
     width: 0;
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #111;
+    background-color: #1e0000;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
