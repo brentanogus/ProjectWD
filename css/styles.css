@@ -59,6 +59,9 @@ header{
     color: white;
 }
 
+.border{
+  border: double white 2px;
+}
 
 table, th, td{
     border: 1px solid;
@@ -164,7 +167,7 @@ input {
   
   button {
     color: black;
-    background-color: black;
+    background-color: white;
     border-color: black;
   }
   .sidenav a {

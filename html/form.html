@@ -76,9 +76,88 @@
         
         
         </form>
+        <div class="centered">
+            <h1>Make a Test Drive before buy...</h1>
+            <button id="startButton">Start Game</button><br><br>
+        <canvas class="border" id="gameCanvas" width="400" height="300"></canvas>
+        </div>
 
         <script>
-            
+            var canvas = document.getElementById("gameCanvas");
+            var ctx = canvas.getContext("2d");
+    
+            var car = {
+                x: canvas.width / 2 - 25,
+                y: canvas.height - 100,
+                width: 50,
+                height: 80,
+                speed: 5
+            };
+    
+            var obstacle = {
+                x: Math.random() * (canvas.width - 50),
+                y: 0,
+                width: 50,
+                height: 50,
+                speed: 2
+            };
+    
+            var gameRunning = false;
+    
+            document.getElementById("startButton").addEventListener("click", startGame);
+    
+            function startGame() {
+                gameRunning = true;
+                resetGame();
+                draw();
+            }
+    
+            window.addEventListener("keydown", function (e) {
+                if (gameRunning) {
+                    if (e.key === "ArrowLeft" && car.x > 0) {
+                        car.x -= car.speed;
+                    } else if (e.key === "ArrowRight" && car.x < canvas.width - car.width) {
+                        car.x += car.speed;
+                    }
+                }
+            });
+    
+            function draw() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+                ctx.fillStyle = "blue";
+                ctx.fillRect(car.x, car.y, car.width, car.height);
+    
+                ctx.fillStyle = "red";
+                ctx.fillRect(obstacle.x, obstacle.y, obstacle.width, obstacle.height);
+    
+                obstacle.y += obstacle.speed;
+    
+                if (
+                    car.x < obstacle.x + obstacle.width &&
+                    car.x + car.width > obstacle.x &&
+                    car.y < obstacle.y + obstacle.height &&
+                    car.y + car.height > obstacle.y
+                ) {
+                    alert("Game Over!");
+                    gameRunning = false;
+                }
+    
+                if (obstacle.y > canvas.height) {
+                    obstacle.y = 0;
+                    obstacle.x = Math.random() * (canvas.width - 50);
+                }
+    
+                if (gameRunning) {
+                    requestAnimationFrame(draw);
+                }
+            }
+    
+            function resetGame() {
+                car.x = canvas.width / 2 - 25;
+                obstacle.x = Math.random() * (canvas.width - 50);
+                obstacle.y = 0;
+            }
         </script>
         
     </body>
