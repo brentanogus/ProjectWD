@@ -61,6 +61,7 @@ header{
 
 .border{
   border: double white 2px;
+  background-color: black;
 }
 
 table, th, td{
